@@ -1,91 +1,68 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+import Image from "next/image";
+import { Inter } from "@next/font/google";
+import styles from "./page.module.css";
+import Slider from "@/components/Slider";
+import ScrollMenu from "@/components/ScrollMenu";
+import ProductCard from "@/components/ProductCard";
+import CategoriesItems from "@/components/CategoriesItems";
+import NewsCard from "@/components/NewsCard";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default async function Home() {
+  const productsData = await fetch("http://localhost:3000/api/products");
+  const productsRes = await productsData.json();
+
+  const newsData = await fetch("http://localhost:3000/api/news");
+  const newsRes = await newsData.json();
+
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
+      <div>
+        <Slider />
+        <ScrollMenu title="Fresh Styles">
+          {productsRes.map((product: any) => (
+            <ProductCard
+              key={product.title}
+              photo={product.photo}
+              title={product.title}
+              price={product.price}
+              rate={product.rate}
+              count={product.count}
             />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          ))}
+        </ScrollMenu>
+        <ScrollMenu title="Shop By Category">
+          <CategoriesItems />
+        </ScrollMenu>
+        <ScrollMenu title="Best Sellers">
+          {productsRes.map((product: any) =>
+            product.isBestSelling ? (
+              <ProductCard
+                key={product.title}
+                photo={product.photo}
+                title={product.title}
+                price={product.price}
+                rate={product.rate}
+                count={product.count}
+              />
+            ) : null
+          )}
+        </ScrollMenu>
+        <ScrollMenu title="DOPE News!">
+          {newsRes.map((news: any) => (
+            <NewsCard
+              key={news.title}
+              photo={news.photo}
+              title={news.title}
+              author={news.author}
+              authorPhoto={news.authorPhoto}
+              overview={news.overview}
+              readingTime={news.readingTime}
+            />
+          ))}
+        </ScrollMenu>
       </div>
     </main>
-  )
+  );
 }

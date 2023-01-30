@@ -10,10 +10,10 @@ import NewsCard from "@/components/NewsCard";
 const inter = Inter({ subsets: ["latin"] });
 
 export default async function Home() {
-  const productsData = await fetch("http://localhost:3000/api/products");
+  const productsData = await fetch("/api/products");
   const productsRes = await productsData.json();
 
-  const newsData = await fetch("http://localhost:3000/api/news");
+  const newsData = await fetch("/api/news");
   const newsRes = await newsData.json();
 
   return (

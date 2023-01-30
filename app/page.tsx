@@ -10,10 +10,10 @@ import NewsCard from "@/components/NewsCard";
 const inter = Inter({ subsets: ["latin"] });
 
 export default async function Home() {
-  const productsData = await fetch("/api/products");
+  const productsData = await fetch("https://dope-red.vercel.app/api/products");
   const productsRes = await productsData.json();
 
-  const newsData = await fetch("/api/news");
+  const newsData = await fetch("https://dope-red.vercel.app/api/news");
   const newsRes = await newsData.json();
 
   return (

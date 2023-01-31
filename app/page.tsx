@@ -10,15 +10,15 @@ import NewsCard from "@/components/NewsCard";
 const inter = Inter({ subsets: ["latin"] });
 
 export default async function Home() {
-  // const productsData = await fetch("https://dope-red.vercel.app/api/products");
-  // const productsRes = await productsData.json();
+  const productsData = await fetch("https://dope-red.vercel.app/api/products");
+  const productsRes = await productsData.json();
 
-  // const newsData = await fetch("https://dope-red.vercel.app/api/news");
-  // const newsRes = await newsData.json();
+  const newsData = await fetch("https://dope-red.vercel.app/api/news");
+  const newsRes = await newsData.json();
 
   return (
     <main className={styles.main}>
-      {/* <div>
+      <div>
         <Slider />
         <ScrollMenu title="Fresh Styles">
           {productsRes.map((product: any) => (
@@ -62,7 +62,7 @@ export default async function Home() {
             />
           ))}
         </ScrollMenu>
-      </div> */}
+      </div>
     </main>
   );
 }

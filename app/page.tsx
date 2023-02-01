@@ -18,7 +18,7 @@ export default async function Home() {
         <ScrollMenu title="Fresh Styles">
           {productsRes.map((product: any) => (
             <ProductCard
-              id={product.id}
+              id={product?.id}
               key={product.id}
               photo={product.photo}
               title={product.title}

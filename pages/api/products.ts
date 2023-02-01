@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Products = Array<{
+  id: number;
   photo: string;
   title: string;
   price: number;
@@ -16,6 +17,7 @@ export default function handler(
 ) {
   res.status(200).json([
     {
+      id: 1,
       photo: "https://i.imgur.com/vudDqr9.png",
       title: "Chelsea Boots",
       price: 399,
@@ -25,6 +27,7 @@ export default function handler(
       isBestSelling: false,
     },
     {
+      id: 2,
       photo:
         "https://images.unsplash.com/photo-1608629601270-a0007becead3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       title: "Chelsea Boots",
@@ -35,6 +38,7 @@ export default function handler(
       isBestSelling: false,
     },
     {
+      id: 3,
       photo:
         "https://images.unsplash.com/photo-1608629601270-a0007becead3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       title: "Chelsea Boots",
@@ -45,6 +49,7 @@ export default function handler(
       isBestSelling: false,
     },
     {
+      id: 4,
       photo:
         "https://images.unsplash.com/photo-1608629601270-a0007becead3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       title: "Chelsea Boots",
@@ -55,6 +60,7 @@ export default function handler(
       isBestSelling: true,
     },
     {
+      id: 5,
       photo:
         "https://images.unsplash.com/photo-1608629601270-a0007becead3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       title: "Chelsea Boots",

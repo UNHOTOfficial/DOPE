@@ -11,7 +11,7 @@ export default function NewsCard({
 }: any) {
   return (
     <div>
-      <Image src={photo} alt={title} width={500} height={400} />
+      <Image src={photo} alt={title} width={300} height={250} />
       <span>{title}</span>
       <div className="flex flex-row">
         <Image className="rounded-full" src={authorPhoto} alt={author} width={50} height={50} />

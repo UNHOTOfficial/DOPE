@@ -5,13 +5,11 @@ import ScrollMenu from "@/components/ScrollMenu";
 import ProductCard from "@/components/ProductCard";
 import CategoriesItems from "@/components/CategoriesItems";
 import NewsCard from "@/components/NewsCard";
+import fetcher from "@/services/fetch";
 
 export default async function Home() {
-  const productsData = await fetch("https://dope-red.vercel.app/api/products");
-  const productsRes = await productsData.json();
-
-  const newsData = await fetch("https://dope-red.vercel.app/api/news");
-  const newsRes = await newsData.json();
+  const productsRes = await fetcher("https://dope-red.vercel.app/api/products");
+  const newsRes = await fetcher("https://dope-red.vercel.app/api/news");
 
   return (
     <main className={styles.main}>
@@ -20,7 +18,8 @@ export default async function Home() {
         <ScrollMenu title="Fresh Styles">
           {productsRes.map((product: any) => (
             <ProductCard
-              key={product.title}
+              id={product.id}
+              key={product.id}
               photo={product.photo}
               title={product.title}
               price={product.price}
@@ -36,7 +35,8 @@ export default async function Home() {
           {productsRes.map((product: any) =>
             product.isBestSelling ? (
               <ProductCard
-                key={product.title}
+                id={product.id}
+                key={product.id}
                 photo={product.photo}
                 title={product.title}
                 price={product.price}

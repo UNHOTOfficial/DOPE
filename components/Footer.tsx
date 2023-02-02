@@ -4,7 +4,7 @@ import React from "react";
 import Logo from "../public/Logo.svg";
 export default function Footer() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col my-4">
       <div className="grid grid-cols-2 gap-4 p-4">
         <div className="flex flex-col">
           <span>Company</span>
@@ -34,9 +34,17 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex flex-col items-center">
-        <Image src={Logo} alt="Logo" width={184} height={32} />
+        <Link href={"/"}>
+          <Image
+            className="my-4"
+            src={Logo}
+            alt="DOPE"
+            width={184}
+            height={32}
+          />
+        </Link>
         <span>© Dope 2023, All Rights Reserved.</span>
-        <span className="self-start text-xs">
+        <span className="mt-1 text-xs">
           Made With <i className="bi bi-heart-fill text-red-600"></i> By Unhot.
         </span>
       </div>

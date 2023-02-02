@@ -25,6 +25,7 @@ export default async function Home() {
               price={product.price}
               rate={product.rate}
               count={product.count}
+              colors={product.colors}
             />
           ))}
         </ScrollMenu>
@@ -42,6 +43,7 @@ export default async function Home() {
                 price={product.price}
                 rate={product.rate}
                 count={product.count}
+                colors={product.colors}
               />
             ) : null
           )}

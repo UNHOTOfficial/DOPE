@@ -10,7 +10,12 @@ export default function ProductCard({
   price,
   rate,
   count,
-}: any) {
+  colors,
+}: any)
+ {
+
+
+
   return (
     <div className="flex flex-col w-40 border border-black rounded-md">
       <Link href={`/${id}`}>
@@ -27,7 +32,7 @@ export default function ProductCard({
         <Link href={`/${id}`}>
           <h5>{title}</h5>
         </Link>
-        <ProductColors />
+        <ProductColors colors={colors} />
         <span>${price}</span>
       </div>
     </div>

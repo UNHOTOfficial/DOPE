@@ -9,6 +9,7 @@ type Products = Array<{
   count: number;
   isFresh: boolean;
   isBestSelling: boolean;
+  colors: Array<string>;
 }>;
 
 export default function handler(
@@ -29,6 +30,7 @@ export default function handler(
       count: 3786,
       isFresh: true,
       isBestSelling: false,
+      colors: ["#D27C3F"],
     },
   ]);
 }

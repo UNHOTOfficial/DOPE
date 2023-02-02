@@ -9,7 +9,7 @@ export default function ScrollMenu({ title, children }: any) {
       <div className="grid overflow-auto gap-2 px-2 grid-flow-col">
         {children}
       </div>
-      <Button data="See More..." />
+      <Button data="See More..." type="button" />
     </div>
   );
 }

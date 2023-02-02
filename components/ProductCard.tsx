@@ -11,11 +11,7 @@ export default function ProductCard({
   rate,
   count,
   colors,
-}: any)
- {
-
-
-
+}: any) {
   return (
     <div className="flex flex-col w-40 border border-black rounded-md">
       <Link href={`/${id}`}>
@@ -30,7 +26,7 @@ export default function ProductCard({
       <div className="py-1 px-3">
         <Rating rate={rate} count={count} />
         <Link href={`/${id}`}>
-          <h5>{title}</h5>
+          <span>{title}</span>
         </Link>
         <ProductColors colors={colors} />
         <span>${price}</span>

@@ -9,7 +9,7 @@ type Products = Array<{
   count: number;
   isFresh: boolean;
   isBestSelling: boolean;
-  colors: [{ title: string; hex: string }];
+  colors: Array<{ title: string; hex: string }>;
 }>;
 
 export default function handler(

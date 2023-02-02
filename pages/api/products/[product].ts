@@ -13,13 +13,12 @@ type Products = Array<{
 }>;
 
 export default function handler(
-    req: NextApiRequest,
-    res: NextApiResponse<Products>,
-    context:any
+  req: NextApiRequest,
+  res: NextApiResponse<Products>,
+  context: any
 ) {
-    
-    console.log(context);
-    
+  console.log(context);
+
   res.status(200).json([
     {
       id: 1,

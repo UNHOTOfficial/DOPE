@@ -14,7 +14,14 @@ export default async function page(context: any) {
 
   return (
     <div>
-      <Image src={product.photo} alt={product.title} width={300} height={250} />
+      <Image
+        className="w-full mx-auto"
+        src={product.photo}
+        alt={product.title}
+        width={428}
+        height={428}
+        quality="100"
+      />
       <h1>{product.title}</h1>
       {/* <div><span>Colors:</span><ProductColors Colors={product?.colors}/></div> */}
       <div>

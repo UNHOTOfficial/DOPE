@@ -9,6 +9,7 @@ type Products = Array<{
   count: number;
   isFresh: boolean;
   isBestSelling: boolean;
+  colors: any;
 }>;
 
 export default function handler(
@@ -25,6 +26,7 @@ export default function handler(
       count: 3786,
       isFresh: true,
       isBestSelling: false,
+      colors: [{ title: "brown", hex: "#D27C3F" }],
     },
     {
       id: 2,
@@ -36,6 +38,7 @@ export default function handler(
       count: 3786,
       isFresh: true,
       isBestSelling: false,
+      colors: [{ title: "brown", hex: "#D27C3F" }],
     },
     {
       id: 3,
@@ -47,6 +50,7 @@ export default function handler(
       count: 3786,
       isFresh: true,
       isBestSelling: false,
+      colors: [{ title: "brown", hex: "#D27C3F" }],
     },
     {
       id: 4,
@@ -58,6 +62,7 @@ export default function handler(
       count: 3786,
       isFresh: true,
       isBestSelling: true,
+      colors: [{ title: "brown", hex: "#D27C3F" }],
     },
     {
       id: 5,
@@ -69,6 +74,7 @@ export default function handler(
       count: 3786,
       isFresh: true,
       isBestSelling: true,
+      colors: [{ title: "brown", hex: "#D27C3F" }],
     },
   ]);
 }

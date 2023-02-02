@@ -1,41 +1,22 @@
 import React from "react";
 
-export default function ProductColors() {
+export default function ProductColors(colors: any) {
   return (
     <div>
-      <span
-        className="border border-black"
-        style={{
-          height: "16px",
-          width: "16px",
-          backgroundColor: "#D27C3F",
-          borderRadius: "50%",
-          display: "inline-block",
-          marginRight: "0.2rem",
-        }}
-      ></span>
-      <span
-        className="border border-black"
-        style={{
-          height: "16px",
-          width: "16px",
-          backgroundColor: "#D27C3F",
-          borderRadius: "50%",
-          display: "inline-block",
-          marginRight: "0.2rem",
-        }}
-      ></span>
-      <span
-        className="border border-black"
-        style={{
-          height: "16px",
-          width: "16px",
-          backgroundColor: "#D27C3F",
-          borderRadius: "50%",
-          display: "inline-block",
-          marginRight: "0.2rem",
-        }}
-      ></span>
+      {colors.colors.map((color: any) => (        
+        <span
+          key={color.title}
+          className="border border-black"
+          style={{
+            height: "16px",
+            width: "16px",
+            backgroundColor: color,
+            borderRadius: "50%",
+            display: "inline-block",
+            marginRight: "0.2rem",
+          }}
+        ></span>
+      ))}
     </div>
   );
 }

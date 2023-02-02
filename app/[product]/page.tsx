@@ -20,7 +20,6 @@ export default async function page(context: any) {
         alt={product.title}
         width={428}
         height={428}
-        quality="100"
       />
       <h1>{product.title}</h1>
       {/* <div><span>Colors:</span><ProductColors Colors={product?.colors}/></div> */}

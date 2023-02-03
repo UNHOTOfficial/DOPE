@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Sizes({ sizes }: any) {
+export default function Sizes({ sizes = [43] }: any) {
   return (
     <div>
-      {sizes?.length > 1 ? (
+      {sizes.length > 1 ? (
         sizes.map((size: any) => (
           <span
             key={size}

@@ -4,34 +4,43 @@ import React from "react";
 import Button from "./Button";
 import ProductColors from "./ProductColors";
 
-export default function CartItem({ image, title, price, colors }: any) {
+export default function CartItem({
+  image,
+  title,
+  price,
+  colors,
+  size,
+  quantity,
+}: any) {
   return (
-    <div className="flex flex-row justify-around">
-      <Image
-        className="w-2/4"
-        src={image}
-        alt={title}
-        width={155}
-        height={120}
-      />
-      <div className="flex flex-col w-3/4">
-        <span>{title}</span>
-        <div className="flex flex-row items-center justify-around">
-          <span>Color:</span>
-          <ProductColors colors={colors} />
+    <tr className="border-b dark:border-gray-700 odd:bg-slate-900 last:border-0">
+      <td className="px-4 py-3">
+        <Image
+          className="rounded-sm"
+          src={image}
+          alt={title}
+          width={48}
+          height={48}
+        />
+      </td>
+      <th
+        scope="row"
+        className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+      >
+        {title}
+      </th>
+      <td className="px-4 py-3">
+        <ProductColors colors={colors} />
+      </td>
+      <td className="px-4 py-3">{size}</td>
+      <td className="px-4 py-3">${price}</td>
+      <td className="px-4 py-3">{quantity}</td>
+      <td className="px-4 py-3">
+        <div className="flex flex-row justify-between w-10">
+          <i className="bi bi-pen text-gray-100"></i>
+          <i className="bi bi-x-lg text-gray-100"></i>
         </div>
-        <div className="flex flex-row items-center justify-around">
-          <span>Size:</span>43
-        </div>
-        <div className="flex flex-row items-center justify-around">
-          <span>Quantity:</span>1
-        </div>
-        <div className="flex flex-row items-center justify-around">
-          <span>Price:</span>
-          ${price}
-        </div>
-        <Button data="Remove Item" />
-      </div>
-    </div>
+      </td>
+    </tr>
   );
 }

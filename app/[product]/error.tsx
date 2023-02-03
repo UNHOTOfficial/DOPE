@@ -13,7 +13,8 @@ export default function error({
   console.error(error.message);
   return (
     <div className="flex flex-col items-center justify-center h-52">
-      <span className="mb-2">Something Went Wrong.</span>
+      <i className="text-2xl font-bold bi bi-heartbreak"></i>
+      <span className="mb-2 text-2xl font-bold">Something Went Wrong.</span>
       <Button data={"Retry"} type="reset" addedClass="" />
     </div>
   );

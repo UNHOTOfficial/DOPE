@@ -4,7 +4,7 @@ import React from "react";
 import Logo from "../public/Logo.svg";
 export default function Footer() {
   return (
-    <div className="flex flex-col my-4">
+    <div className="flex flex-col my-4 border-t border-slate-600">
       <div className="grid grid-cols-2 gap-4 p-4">
         <div className="flex flex-col">
           <span>Company</span>

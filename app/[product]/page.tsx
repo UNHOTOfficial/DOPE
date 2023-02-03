@@ -20,6 +20,7 @@ export default async function page(context: any) {
         alt={product.title}
         width={428}
         height={428}
+        priority
       />
       <h1 className="text-3xl font-semibold mt-1">{product.title}</h1>
       <div className="flex flex-row">

@@ -21,6 +21,7 @@ export default function ProductCard({
           width={250}
           height={200}
           alt={title}
+          priority
         />
         <div className="py-1 px-3">
           <Rating rate={rate} count={count} />

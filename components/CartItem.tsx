@@ -16,7 +16,7 @@ export default function CartItem({
     <tr className="border-b dark:border-gray-700 odd:bg-slate-900 last:border-0">
       <td className="px-4 py-3">
         <Image
-          className="rounded-sm w-14 h-12 max-w-fit border border-gray-100 dark:border-gray-700"
+          className="rounded-sm w-16 h-12 max-w-fit border border-gray-100 dark:border-gray-700"
           src={photo}
           alt={title}
           width={1000}

@@ -19,8 +19,8 @@ export default function CartItem({
           className="rounded-sm w-12 h-12"
           src={photo}
           alt={title}
-          width={500}
-          height={500}
+          width={1000}
+          height={1000}
         />
       </td>
       <th

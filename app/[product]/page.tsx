@@ -9,6 +9,7 @@ export default async function page(context: any) {
   const id = context.params.product;
   const productArray = await fetcher(`/api/products/${id}`);
   const product = productArray[0];
+
   return (
     <div>
       <Image

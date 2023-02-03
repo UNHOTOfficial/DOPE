@@ -10,6 +10,7 @@ type Products = Array<{
   isFresh: boolean;
   isBestSelling: boolean;
   colors: Array<string>;
+  overview: string;
 }>;
 
 export default function handler(
@@ -17,8 +18,6 @@ export default function handler(
   res: NextApiResponse<Products>,
   context: any
 ) {
-  console.log(context);
-
   res.status(200).json([
     {
       id: 1,
@@ -30,6 +29,8 @@ export default function handler(
       isFresh: true,
       isBestSelling: false,
       colors: ["#D27C3F"],
+      overview:
+        "The secret to spotting the perfect Chelsea boots is to look for those that are timeless, crafted from a hardy, long-lasting material and have a unique detail. Ticking all the right boxes, Proenza Schouler's pair has been made in Italy from black leather and detailed with contrasting white stitching. They're equipped with elasticated panels at the sides for comfort, plus handy pull tabs at the back.",
     },
   ]);
 }

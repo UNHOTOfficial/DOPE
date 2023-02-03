@@ -46,7 +46,7 @@ export default async function page() {
             {cartItems.map((cartItem: any) => (
               <CartItem
                 key={cartItem.title}
-                image={cartItem.image}
+                photo={cartItem.photo}
                 title={cartItem.title}
                 price={cartItem.price}
                 colors={cartItem.colors}

@@ -5,7 +5,7 @@ import Button from "./Button";
 import ProductColors from "./ProductColors";
 
 export default function CartItem({
-  image,
+  photo,
   title,
   price,
   colors,
@@ -17,7 +17,7 @@ export default function CartItem({
       <td className="px-4 py-3">
         <Image
           className="rounded-sm"
-          src={image}
+          src={photo}
           alt={title}
           width={48}
           height={48}

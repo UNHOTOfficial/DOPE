@@ -6,31 +6,59 @@ export default function Footer() {
   return (
     <div className="flex flex-col my-4 border-t border-slate-700">
       <div className="grid grid-cols-2 gap-4 p-4 text-gray-500">
-        <div className="flex flex-col space-y-1 max-w-fit">
+        <div className="flex flex-col space-y-1">
           <span className="text-slate-100 font-semibold">Company</span>
-          <Link className="hover:underline" href={"/about"}>About</Link>
-          <Link className="hover:underline" href={"/contact"}>Contact</Link>
-          <Link className="hover:underline" href={"/careers"}>Careers</Link>
-          <Link className="hover:underline" href={"/blog"}>Blog</Link>
+          <Link className="hover:underline" href={"/about"}>
+            About
+          </Link>
+          <Link className="hover:underline" href={"/contact"}>
+            Contact
+          </Link>
+          <Link className="hover:underline" href={"/careers"}>
+            Careers
+          </Link>
+          <Link className="hover:underline" href={"/blog"}>
+            Blog
+          </Link>
         </div>
-        <div className="flex flex-col space-y-1 max-w-fit">
+        <div className="flex flex-col space-y-1">
           <span className="text-slate-100 font-semibold">Help Center</span>
-          <Link className="hover:underline" href={"/faqs"}>FAQs</Link>
-          <Link className="hover:underline" href={"/guides"}>Guides</Link>
-          <Link className="hover:underline" href={"/tracking"}>Order Tracking</Link>
-          <Link className="hover:underline" href={"/warranty"}>Warranty</Link>
+          <Link className="hover:underline" href={"/faqs"}>
+            FAQs
+          </Link>
+          <Link className="hover:underline" href={"/guides"}>
+            Guides
+          </Link>
+          <Link className="hover:underline" href={"/tracking"}>
+            Order Tracking
+          </Link>
+          <Link className="hover:underline" href={"/warranty"}>
+            Warranty
+          </Link>
         </div>
-        <div className="flex flex-col space-y-1 max-w-fit">
+        <div className="flex flex-col space-y-1">
           <span className="text-slate-100 font-semibold">Legal</span>
-          <Link className="hover:underline" href={"/privacy"}>Privacy Policy</Link>
-          <Link className="hover:underline" href={"/terms"}>Terms And Conditions</Link>
-          <Link className="hover:underline" href={"/refund"}>Refund Policy</Link>
+          <Link className="hover:underline" href={"/privacy"}>
+            Privacy Policy
+          </Link>
+          <Link className="hover:underline" href={"/terms"}>
+            Terms And Conditions
+          </Link>
+          <Link className="hover:underline" href={"/refund"}>
+            Refund Policy
+          </Link>
         </div>
-        <div className="flex flex-col space-y-1 max-w-fit">
+        <div className="flex flex-col space-y-1">
           <span className="text-slate-100 font-semibold">Status</span>
-          <Link className="hover:underline" href={"/status"}>Services Status</Link>
-          <Link className="hover:underline" href={"/problem"}>Report A Problem</Link>
-          <Link className="hover:underline" href={"/bug"}>Bug Bounty</Link>
+          <Link className="hover:underline" href={"/status"}>
+            Services Status
+          </Link>
+          <Link className="hover:underline" href={"/problem"}>
+            Report A Problem
+          </Link>
+          <Link className="hover:underline" href={"/bug"}>
+            Bug Bounty
+          </Link>
         </div>
       </div>
       <div className="flex flex-col items-center">

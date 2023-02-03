@@ -15,7 +15,9 @@ export default function CartItem({
   return (
     <tr className="border-b dark:border-gray-700 odd:bg-slate-900 last:border-0">
       <td className="px-4 py-3">
-        <Image className="rounded-sm w-3 h-3" src={photo} alt={title} fill />
+        <div className="w-12 h-15">
+          <Image className="rounded-sm" src={photo} alt={title} fill />
+        </div>
       </td>
       <th
         scope="row"

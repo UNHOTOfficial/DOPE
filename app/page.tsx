@@ -51,7 +51,7 @@ export default async function Home() {
         <ScrollMenu title="DOPE News!">
           {newsRes.map((news: any) => (
             <NewsCard
-              key={news.title}
+              key={news.id}
               photo={news.photo}
               title={news.title}
               author={news.author}

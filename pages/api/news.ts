@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type News = Array<{
+  id: number;
   photo: string;
   title: string;
   author: string;
@@ -15,6 +16,7 @@ export default function handler(
 ) {
   res.status(200).json([
     {
+      id: 1,
       photo: "https://i.imgur.com/vudDqr9.png",
       title: "Chelsea Boots",
       author: "John Doe",
@@ -25,6 +27,7 @@ export default function handler(
       readingTime: 5,
     },
     {
+      id: 2,
       photo: "https://i.imgur.com/vudDqr9.png",
       title: "Chelsea Boots",
       author: "John Doe",
@@ -35,6 +38,7 @@ export default function handler(
       readingTime: 5,
     },
     {
+      id: 3,
       photo: "https://i.imgur.com/vudDqr9.png",
       title: "Chelsea Boots",
       author: "John Doe",
@@ -45,6 +49,7 @@ export default function handler(
       readingTime: 5,
     },
     {
+      id: 4,
       photo: "https://i.imgur.com/vudDqr9.png",
       title: "Chelsea Boots",
       author: "John Doe",
@@ -55,6 +60,7 @@ export default function handler(
       readingTime: 5,
     },
     {
+      id: 5,
       photo: "https://i.imgur.com/vudDqr9.png",
       title: "Chelsea Boots",
       author: "John Doe",

@@ -45,7 +45,7 @@ export default async function page() {
           <tbody>
             {cartItems.map((cartItem: any) => (
               <CartItem
-                key={cartItem.title}
+                key={cartItem.id}
                 photo={cartItem.photo}
                 title={cartItem.title}
                 price={cartItem.price}

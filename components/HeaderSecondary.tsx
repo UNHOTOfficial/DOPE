@@ -3,10 +3,14 @@ import React from "react";
 
 export default function HeaderSecondary() {
   return (
-    <div className="flex flex-row items-center justify-around py-2 bg-slate-900">
+    <div className="flex flex-row items-center justify-around py-2 bg-slate-900 border-y border-gray-700">
       <div className="flex flex-row w-28 justify-evenly">
-        <Link href={"signin"}><i className="bi bi-person" style={{ fontSize: "1.5rem" }}></i></Link>
-        <Link href={"cart"}><i className="bi bi-bag" style={{ fontSize: "1.5rem" }}></i></Link>
+        <Link href={"signin"}>
+          <i className="bi bi-person" style={{ fontSize: "1.5rem" }}></i>
+        </Link>
+        <Link href={"cart"}>
+          <i className="bi bi-bag" style={{ fontSize: "1.5rem" }}></i>
+        </Link>
       </div>
       <form>
         <input

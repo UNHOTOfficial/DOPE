@@ -8,55 +8,55 @@ export default function Footer() {
       <div className="grid grid-cols-2 gap-4 p-4 text-gray-500">
         <div className="flex flex-col space-y-1">
           <span className="text-slate-100 font-semibold">Company</span>
-          <Link className="hover:underline" href={"/about"}>
+          <Link className="hover:underline py-1" href={"/about"}>
             About
           </Link>
-          <Link className="hover:underline" href={"/contact"}>
+          <Link className="hover:underline py-1" href={"/contact"}>
             Contact
           </Link>
-          <Link className="hover:underline" href={"/careers"}>
+          <Link className="hover:underline py-1" href={"/careers"}>
             Careers
           </Link>
-          <Link className="hover:underline" href={"/blog"}>
+          <Link className="hover:underline py-1" href={"/blog"}>
             Blog
           </Link>
         </div>
         <div className="flex flex-col space-y-1">
           <span className="text-slate-100 font-semibold">Help Center</span>
-          <Link className="hover:underline" href={"/faqs"}>
+          <Link className="hover:underline py-1" href={"/faqs"}>
             FAQs
           </Link>
-          <Link className="hover:underline" href={"/guides"}>
+          <Link className="hover:underline py-1" href={"/guides"}>
             Guides
           </Link>
-          <Link className="hover:underline" href={"/tracking"}>
+          <Link className="hover:underline py-1" href={"/tracking"}>
             Order Tracking
           </Link>
-          <Link className="hover:underline" href={"/warranty"}>
+          <Link className="hover:underline py-1" href={"/warranty"}>
             Warranty
           </Link>
         </div>
         <div className="flex flex-col space-y-1">
           <span className="text-slate-100 font-semibold">Legal</span>
-          <Link className="hover:underline" href={"/privacy"}>
+          <Link className="hover:underline py-1" href={"/privacy"}>
             Privacy Policy
           </Link>
-          <Link className="hover:underline" href={"/terms"}>
+          <Link className="hover:underline py-1" href={"/terms"}>
             Terms And Conditions
           </Link>
-          <Link className="hover:underline" href={"/refund"}>
+          <Link className="hover:underline py-1" href={"/refund"}>
             Refund Policy
           </Link>
         </div>
         <div className="flex flex-col space-y-1">
           <span className="text-slate-100 font-semibold">Status</span>
-          <Link className="hover:underline" href={"/status"}>
+          <Link className="hover:underline py-1" href={"/status"}>
             Services Status
           </Link>
-          <Link className="hover:underline" href={"/problem"}>
+          <Link className="hover:underline py-1" href={"/problem"}>
             Report A Problem
           </Link>
-          <Link className="hover:underline" href={"/bug"}>
+          <Link className="hover:underline py-1" href={"/bug"}>
             Bug Bounty
           </Link>
         </div>

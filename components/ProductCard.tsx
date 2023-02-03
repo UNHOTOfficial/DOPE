@@ -13,24 +13,22 @@ export default function ProductCard({
   colors,
 }: any) {
   return (
-    <div className="flex flex-col w-40 border border-black rounded-md">
-      <Link href={`/${id}`}>
+    <Link href={`/${id}`}>
+      <div className="flex flex-col w-40 border border-gray-100 dark:border-gray-700 rounded-md">
         <Image
-          className="rounded-t-md"
+          className="rounded-t-md border-b border-gray-100 dark:border-gray-700"
           src={photo}
           width={250}
           height={200}
           alt={title}
         />
-      </Link>
-      <div className="py-1 px-3">
-        <Rating rate={rate} count={count} />
-        <Link href={`/${id}`}>
+        <div className="py-1 px-3">
+          <Rating rate={rate} count={count} />
           <span>{title}</span>
-        </Link>
-        <ProductColors colors={colors} />
-        <span>${price}</span>
+          <ProductColors colors={colors} />
+          <span>${price}</span>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }

@@ -37,7 +37,7 @@ export default function handler(
         "The secret to spotting the perfect Chelsea boots is to look for those that are timeless, crafted from a hardy, long-lasting material and have a unique detail. Ticking all the right boxes, Proenza Schouler's pair has been made in Italy from black leather and detailed with contrasting white stitching. They're equipped with elasticated panels at the sides for comfort, plus handy pull tabs at the back.",
     },
     {
-      id: 1,
+      id: 2,
       photo: "https://i.imgur.com/vudDqr9.png",
       title: "Chelsea Boots",
       price: 399,
@@ -52,7 +52,7 @@ export default function handler(
         "The secret to spotting the perfect Chelsea boots is to look for those that are timeless, crafted from a hardy, long-lasting material and have a unique detail. Ticking all the right boxes, Proenza Schouler's pair has been made in Italy from black leather and detailed with contrasting white stitching. They're equipped with elasticated panels at the sides for comfort, plus handy pull tabs at the back.",
     },
     {
-      id: 1,
+      id: 3,
       photo: "https://i.imgur.com/vudDqr9.png",
       title: "Chelsea Boots",
       price: 399,
@@ -67,7 +67,7 @@ export default function handler(
         "The secret to spotting the perfect Chelsea boots is to look for those that are timeless, crafted from a hardy, long-lasting material and have a unique detail. Ticking all the right boxes, Proenza Schouler's pair has been made in Italy from black leather and detailed with contrasting white stitching. They're equipped with elasticated panels at the sides for comfort, plus handy pull tabs at the back.",
     },
     {
-      id: 1,
+      id: 4,
       photo: "https://i.imgur.com/vudDqr9.png",
       title: "Chelsea Boots",
       price: 399,

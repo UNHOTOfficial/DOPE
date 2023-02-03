@@ -8,15 +8,15 @@ import NewsCard from "@/components/NewsCard";
 import fetcher from "@/services/fetch";
 
 export default async function Home() {
-  const productsRes = await fetcher("https://dope-red.vercel.app/api/products");
-  const newsRes = await fetcher("https://dope-red.vercel.app/api/news");
+  const products = await fetcher(`/api/products`);
+  const newsRes = await fetcher(`/api/news`);
 
   return (
     <main className={styles.main}>
       <div>
         <Slider />
         <ScrollMenu title="Fresh Styles">
-          {productsRes.map((product: any) => (
+          {products.map((product: any) => (
             <ProductCard
               id={product?.id}
               key={product.id}
@@ -33,7 +33,7 @@ export default async function Home() {
           <CategoriesItems />
         </ScrollMenu>
         <ScrollMenu title="Best Sellers">
-          {productsRes.map((product: any) =>
+          {products.map((product: any) =>
             product.isBestSelling ? (
               <ProductCard
                 id={product.id}

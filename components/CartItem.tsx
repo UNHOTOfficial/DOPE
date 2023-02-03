@@ -20,7 +20,7 @@ export default function CartItem({
           src={photo}
           alt={title}
           width={1000}
-          height={1000}
+          height={500}
         />
       </td>
       <th

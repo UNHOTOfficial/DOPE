@@ -3,7 +3,6 @@ import Button from "@/components/Button";
 import ProductColors from "@/components/ProductColors";
 import Sizes from "@/components/Sizes";
 import fetcher from "@/services/fetch";
-import { log } from "console";
 import Image from "next/image";
 import React from "react";
 
@@ -11,7 +10,7 @@ export default async function page(context: any) {
   const id = context.params.product;
   const productArray = await fetcher(`/api/products/${id}`);
   const product = productArray[0];
-  log(product);
+
   return (
     <div className="space-y-3">
       <BreadCrumb />

@@ -4,7 +4,7 @@ import fetcher from "@/services/fetch";
 import React from "react";
 
 export default async function page() {
-  const cartItems = await fetcher("/api/cart");
+  const cartItems = await fetcher("/api/cart", "static");
 
   let prices = {
     products: 0,

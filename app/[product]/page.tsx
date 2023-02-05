@@ -8,7 +8,7 @@ import React from "react";
 
 export default async function page(context: any) {
   const id = context.params.product;
-  const productArray = await fetcher(`/api/products/${id}`);
+  const productArray = await fetcher(`/api/products/${id}`, "static");
   const product = productArray[0];
 
   return (

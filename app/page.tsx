@@ -8,8 +8,10 @@ import NewsCard from "@/components/NewsCard";
 import fetcher from "@/services/fetch";
 
 export default async function Home() {
-  const products = await fetcher(`/api/products`);
-  const newsRes = await fetcher(`/api/news`);
+  const productsData = fetcher(`/api/products`, "static");
+  const newsResData = fetcher(`/api/news`, "static");
+
+  const [products, newsRes] = await Promise.all([productsData, newsResData]);
 
   return (
     <main className={styles.main}>

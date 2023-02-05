@@ -1,9 +1,9 @@
 const isDev = process.env.NODE_ENV !== "production";
 const withPWA = require("next-pwa")({
+  disable: true,
   dest: "public",
   register: true,
   skipWaiting: true,
-  disable: false,
   sw: "service-worker.js",
   exclude: [
     // add buildExcludes here

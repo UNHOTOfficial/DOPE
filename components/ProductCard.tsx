@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
 import ProductColors from "./ProductColors";
 import Rating from "./ProductRating";
 export default function ProductCard({
@@ -13,6 +13,7 @@ export default function ProductCard({
   colors,
 }: any) {
   return (
+    <Suspense fallback={<span>Loading...</span>}>
     <Link href={`/${id}`}>
       <div className="flex flex-col w-40 border border-gray-100 dark:border-gray-700 rounded-md">
         <Image
@@ -30,6 +31,6 @@ export default function ProductCard({
           <span>${price}</span>
         </div>
       </div>
-    </Link>
+    </Link></Suspense>
   );
 }

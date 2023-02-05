@@ -1,9 +1,12 @@
+const runtimeCaching = require("next-pwa/cache");
 const withPWA = require("next-pwa")({
   dest: "public",
   register: true,
   skipWaiting: true,
   disable: false,
   sw: "service-worker.js",
+  buildExcludes: [/middleware-manifest.json$/],
+  runtimeCaching,
 });
 
 /** @type {import('next').NextConfig} */

@@ -1,3 +1,5 @@
+//Registers Service Worker To Body.
+
 "use client";
 
 import { useEffect } from "react";

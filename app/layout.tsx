@@ -18,14 +18,14 @@ export default function RootLayout({
       */}
       <head />
       <body>
+        <Script
+        src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"
+      />
         <HeaderPrimary />
         <HeaderSecondary />
         <div className="m-6">{children}</div>
         <Footer />
         <Pwa /> {/* Register Service Worker */}
-        <Script
-        src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"
-      />
       </body>
     </html>
   );

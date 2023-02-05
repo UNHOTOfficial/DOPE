@@ -2,7 +2,10 @@ export default function Head() {
   return (
     <>
       <title>Dope - Fashion And Style</title>
-      <meta content="width=device-width, initial-scale=1" name="viewport" />
+      <meta
+        name="viewport"
+        content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+      />
       <meta
         name="description"
         content="Dope - Fashion And Style Online Shop."
@@ -10,13 +13,13 @@ export default function Head() {
       <link rel="icon" href="/favicon.ico" />
       <meta name="theme-color" content="#ff4057" />
       <link rel="manifest" href="/manifest.json" />
-      {/* IOS */}
-      <link rel="apple-touch-icon" href="/icon-192x192.png" />
-      <link rel="apple-touch-icon" href="/icon-256x256.png" />
-      <link rel="apple-touch-icon" href="/icon-384x384.png" />
-      <link rel="apple-touch-icon" href="/icon-512x512.png" />
-      <meta name="apple-mobile-web-app-status-bar" content="#ff4057" />
-      <meta name="theme-color" content="#ff4057" />
+      
+      <meta name="application-name" content="DOPE" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="#ff4057" />
+      <meta name="apple-mobile-web-app-title" content="DOPE" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="mobile-web-app-capable" content="yes" />
     </>
   );
 }

@@ -1,10 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import Slide1 from "../public/assets/slide1.avif";
-import Slide2 from "../public/assets/slide2.avif";
-import Slide3 from "../public/assets/slide3.avif";
-import Slide4 from "../public/assets/slide4.avif";
-import Slide5 from "../public/assets/slide5.avif";
 
 export default function Slider() {
   return (
@@ -17,31 +12,28 @@ export default function Slider() {
             First Slide
           </span>
           <Image
-            src={Slide1}
-            className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            src={"/assets/slide1.jpg"}
+            className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-contain"
             alt="..."
-            width={384}
-            height={224}
+            fill
           />
         </div>
         {/* Item 2 */}
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <Image
-            src={Slide2}
-            className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            src={"/assets/slide2.jpg"}
+            className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-contain"
             alt="..."
-            width={384}
-            height={224}
+            fill
           />
         </div>
         {/* Item 3 */}
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <Image
-            src={Slide3}
-            className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            src={"/assets/slide3.jpg"}
+            className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-contain"
             alt="..."
-            width={384}
-            height={224}
+            fill
           />
         </div>
       </div>

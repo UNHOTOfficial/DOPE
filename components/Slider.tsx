@@ -8,7 +8,7 @@ import Slide5 from "../public/assets/slide5.avif";
 
 export default function Slider() {
   return (
-    <div id="default-carousel" className="relative" data-carousel="static">
+    <div id="default-carousel" className="relative" data-carousel="slide">
       {/* Carousel wrapper */}
       <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
         {/* Item 1 */}

@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import HeaderPrimary from "@/components/HeaderPrimary";
 import HeaderSecondary from "@/components/HeaderSecondary";
 import "./globals.css";
+import Pwa from "./pwa";
 
 export default function RootLayout({
   children,
@@ -20,6 +21,7 @@ export default function RootLayout({
         <HeaderSecondary />
         <div className="m-6">{children}</div>
         <Footer />
+        <Pwa />
       </body>
     </html>
   );

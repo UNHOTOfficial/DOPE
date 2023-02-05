@@ -1,19 +1,27 @@
-const runtimeCaching = require("next-pwa/cache");
+const isDev = process.env.NODE_ENV !== "production";
 const withPWA = require("next-pwa")({
   dest: "public",
   register: true,
   skipWaiting: true,
   disable: false,
   sw: "service-worker.js",
-  buildExcludes: [
-    /\/*server\/middleware-chunks\/[0-9]*[a-z]*[A-Z]*\.js$/,
-    /middleware-manifest\.json$/,
-    /middleware-runtime\.js$/,
-    /_middleware\.js$/,
-    /^.+\\_middleware\.js$/,
-],
-publicExcludes: ['!robots.txt'],
-  runtimeCaching,
+  exclude: [
+    // add buildExcludes here
+    ({ asset, compilation }) => {
+      if (
+        asset.name.startsWith("server/") ||
+        asset.name.match(
+          /^((app-|^)build-manifest\.json|react-loadable-manifest\.json)$/
+        )
+      ) {
+        return true;
+      }
+      if (isDev && !asset.name.startsWith("static/runtime/")) {
+        return true;
+      }
+      return false;
+    },
+  ],
 });
 
 /** @type {import('next').NextConfig} */

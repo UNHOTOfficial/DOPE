@@ -10,14 +10,14 @@ import CategoryItem from "@/components/CategoryItem";
 export default async function Home() {
   const productsData = fetcher(`/api/products`, "static");
   const newsResData = fetcher(`/api/news`, "static");
-  // const categoriesData = fetcher("/api/categories", "static");
+  const categoriesData = fetcher("/api/categories", "static");
 
-  const [products, newsRes] = await Promise.all([
+  const [products, newsRes, categories] = await Promise.all([
     productsData,
     newsResData,
-    // categoriesData,
+    categoriesData,
   ]);
-  
+
   return (
     <main className={styles.main}>
       <div>
@@ -36,7 +36,7 @@ export default async function Home() {
             />
           ))}
         </ScrollMenu>
-        {/* <ScrollMenu title="Shop By Category">
+        <ScrollMenu title="Shop By Category">
           {categories.map((category: any) => (
             <CategoryItem
               key={category.title}
@@ -44,7 +44,7 @@ export default async function Home() {
               title={category.title}
             />
           ))}
-        </ScrollMenu> */}
+        </ScrollMenu>
         <ScrollMenu title="Best Sellers">
           {products.map((product: any) =>
             product.isBestSelling ? (

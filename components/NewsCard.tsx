@@ -10,21 +10,26 @@ export default function NewsCard({
   readingTime,
 }: any) {
   return (
-    <div>
-      <Image src={photo} alt={title} width={300} height={250} />
-      <span>{title}</span>
-      <div className="flex flex-row">
-        <Image
-          className="rounded-full"
-          src={authorPhoto}
-          alt={author}
-          width={50}
-          height={50}
-        />
-        <span>{author}</span>
+    <div className="w-44 flex flex-col border border-gray-100 dark:border-gray-700 rounded-md">
+      <div className="relative w-44 h-28 object-cover">
+        <Image src={photo} alt={title} fill />
       </div>
-      <p>{overview}</p>
-      <span>{readingTime} Minutes</span>
+      <div className="p-2">
+        <span className="capitalize">{title}</span>
+        <div className="flex flex-row items-center">
+          <div className="relative w-8 h-8 object-contain mr-2 my-2">
+            <Image
+              className="rounded-full"
+              src={authorPhoto}
+              alt={author}
+              fill
+            />
+          </div>
+          <span className="text-gray-400 text-sm">{author}</span>
+        </div>
+        <p className="text-sm">{overview}</p>
+        <span>{readingTime} Minutes</span>
+      </div>
     </div>
   );
 }

@@ -22,7 +22,7 @@ export default function handler(
   res.status(200).json([
     {
       id: 1,
-      photo: "https://i.imgur.com/vudDqr9.png",
+      photo: "/assets/chelsea-boots.jpg",
       title: "Chelsea Boots",
       price: 399,
       rate: 4.7,

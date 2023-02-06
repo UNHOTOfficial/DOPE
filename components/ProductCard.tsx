@@ -15,7 +15,7 @@ export default function ProductCard({
   return (
     <Suspense fallback={<span>Loading...</span>}>
     <Link href={`/${id}`}>
-      <div className="flex flex-col w-40 border border-gray-100 dark:border-gray-700 rounded-md">
+      <div className="flex flex-col w-40 border border-gray-100 dark:border-gray-700 rounded-sm">
         <Image
           className="rounded-t-md border-b border-gray-100 dark:border-gray-700"
           src={photo}

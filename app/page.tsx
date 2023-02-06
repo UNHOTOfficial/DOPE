@@ -3,16 +3,21 @@ import styles from "./page.module.css";
 import Slider from "@/components/Slider";
 import ScrollMenu from "@/components/ScrollMenu";
 import ProductCard from "@/components/ProductCard";
-import CategoriesItems from "@/components/CategoriesItems";
 import NewsCard from "@/components/NewsCard";
 import fetcher from "@/services/fetch";
+import CategoryItem from "@/components/CategoryItem";
 
 export default async function Home() {
   const productsData = fetcher(`/api/products`, "static");
   const newsResData = fetcher(`/api/news`, "static");
+  const categoriesData = fetcher("/api/categories", "static");
 
-  const [products, newsRes] = await Promise.all([productsData, newsResData]);
-
+  const [products, newsRes, categories] = await Promise.all([
+    productsData,
+    newsResData,
+    categoriesData,
+  ]);
+  
   return (
     <main className={styles.main}>
       <div>
@@ -32,7 +37,13 @@ export default async function Home() {
           ))}
         </ScrollMenu>
         <ScrollMenu title="Shop By Category">
-          <CategoriesItems />
+          {categories.map((category: any) => (
+            <CategoryItem
+              key={category.title}
+              image={category.image}
+              title={category.title}
+            />
+          ))}
         </ScrollMenu>
         <ScrollMenu title="Best Sellers">
           {products.map((product: any) =>

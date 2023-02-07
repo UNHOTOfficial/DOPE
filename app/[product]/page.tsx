@@ -9,29 +9,29 @@ import React from "react";
 export default async function page(context: any) {
   const id = context.params.product;
   const productArray = await fetcher(`/api/products/${id}`, "static");
-  const product = productArray[0];
+  const product = productArray.data[0];
 
   return (
     <div className="space-y-3">
       <BreadCrumb />
       <Image
         className="w-full mx-auto"
-        src={product.data.photo}
-        alt={product.data.title}
+        src={product.photo}
+        alt={product.title}
         width={428}
         height={428}
         priority
       />
-      <h1 className="text-3xl font-semibold mt-1">{product.data.title}</h1>
+      <h1 className="text-3xl font-semibold mt-1">{product.title}</h1>
       <div className="flex flex-row">
         <span>Colors:</span>
-        <ProductColors Colors={product.data?.colors} />
+        <ProductColors Colors={product?.colors} />
       </div>
       <div className="flex flex-row">
         <span>Sizes:</span>
-        <Sizes sizes={product.data.sizes} />
+        <Sizes sizes={product.sizes} />
       </div>
-      <p>{product.data.overview}</p>
+      <p>{product.overview}</p>
       <div className="flex flex-col w-full items-stretch">
         <Button
           addedClass={

@@ -23,7 +23,7 @@ export default async function Home() {
       <div>
         <Slider />
         <ScrollMenu title="Fresh Styles">
-          {products.map((product: any) => (
+          {products.data.map((product: any) => (
             <ProductCard
               id={product?.id}
               key={product.id}
@@ -37,7 +37,7 @@ export default async function Home() {
           ))}
         </ScrollMenu>
         <ScrollMenu title="Shop By Category">
-          {categories.map((category: any) => (
+          {categories.data.map((category: any) => (
             <CategoryItem
               key={category.title}
               image={category.image}
@@ -46,7 +46,7 @@ export default async function Home() {
           ))}
         </ScrollMenu>
         <ScrollMenu title="Best Sellers">
-          {products.map((product: any) =>
+          {products.data.map((product: any) =>
             product.isBestSelling ? (
               <ProductCard
                 id={product.id}
@@ -62,7 +62,7 @@ export default async function Home() {
           )}
         </ScrollMenu>
         <ScrollMenu title="DOPE News!">
-          {newsRes.map((news: any) => (
+          {newsRes.data.map((news: any) => (
             <NewsCard
               key={news.id}
               photo={news.photo}

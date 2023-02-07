@@ -4,9 +4,7 @@ import Link from "next/link";
 import React from "react";
 import CartIcon from "./CartIcon";
 
-export default async function HeaderSecondary() {
-  const statusData = fetcher("/api/cart", "static");
-  const [status] = await Promise.all([statusData]);
+export default function HeaderSecondary() {
   return (
     <div className="flex flex-row items-center justify-around py-2 bg-slate-900 border-y border-gray-700">
       <div className="flex flex-row w-28 justify-evenly">
@@ -14,7 +12,7 @@ export default async function HeaderSecondary() {
           <i className="bi bi-person" style={{ fontSize: "1.5rem" }}></i>
         </Link>
         <Link href={"cart"} aria-label="View Your Shopping Cart.">
-          <CartIcon status={status} />
+          <CartIcon status={[1, 2, 3]} />
         </Link>
       </div>
       <form>

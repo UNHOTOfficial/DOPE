@@ -2,20 +2,14 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 type Products = {
   data: Array<{
-    id: number;
-    photo: string;
-    title: string;
-    price: number;
-    rate: number;
-    count: number;
-    isFresh: boolean;
-    isBestSelling: boolean;
-    colors: Array<string>;
-    overview: string;
+    email: string;
+    password: string;
   }>;
   message: string;
 };
 
+type data = Array<{ email: string; password: string }>;
+let data = [{ email: "", password: "" }];
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Products>
@@ -23,11 +17,12 @@ export default function handler(
   switch (req.method) {
     case "GET":
       res.status(200).json({
-        data: [],
+        data: data,
         message: "GET",
       });
       break;
     case "POST":
+      data?.push(req.body);
       res.status(200).json({ data: req.body, message: "POST" });
       break;
     case "PATCH":

@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import CartIcon from "./CartIcon";
 
-export default async function HeaderSecondary() {
+export default function HeaderSecondary() {
   // let status = await fetcher("/api/cart", "static");
   let status = [0, 1, 2];
   return (

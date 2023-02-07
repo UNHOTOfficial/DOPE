@@ -5,7 +5,7 @@ import CartIcon from "./CartIcon";
 
 export default function HeaderSecondary() {
   // let status = await fetcher("/api/cart", "static");
-  let status = [0, 1, 2];
+  let status = { data: [0, 1, 2] };
   return (
     <div className="flex flex-row items-center justify-around py-2 bg-slate-900 border-y border-gray-700">
       <div className="flex flex-row w-28 justify-evenly">

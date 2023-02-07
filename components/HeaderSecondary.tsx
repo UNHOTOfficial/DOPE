@@ -1,11 +1,12 @@
 import fetcher from "@/services/fetch";
+import { log } from "console";
 import Link from "next/link";
 import React from "react";
 import CartIcon from "./CartIcon";
 
-export default function HeaderSecondary() {
-  // let status = await fetcher("/api/cart", "static");
-  let status = { data: [0, 1, 2] };
+export default async function HeaderSecondary() {
+  const statusData = fetcher("/api/cart", "static");
+  const [status] = await Promise.all([statusData]);
   return (
     <div className="flex flex-row items-center justify-around py-2 bg-slate-900 border-y border-gray-700">
       <div className="flex flex-row w-28 justify-evenly">

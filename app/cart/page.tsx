@@ -12,8 +12,8 @@ export default async function page() {
     total: 0,
   };
 
-  for (let index = 0; index < cartItems.length; index++) {
-    cartItems.map((cartItem: any) => (prices.products += cartItem.price));
+  for (let index = 0; index < cartItems.data.length; index++) {
+    cartItems.data.map((cartItem: any) => (prices.products += cartItem.price));
     prices.delivery += 5;
   }
 
@@ -43,7 +43,7 @@ export default async function page() {
             </tr>
           </thead>
           <tbody>
-            {cartItems.map((cartItem: any) => (
+            {cartItems.data.map((cartItem: any) => (
               <CartItem
                 key={cartItem.id}
                 photo={cartItem.photo}

@@ -16,22 +16,22 @@ export default async function page(context: any) {
       <BreadCrumb />
       <Image
         className="w-full mx-auto"
-        src={product.photo}
-        alt={product.title}
+        src={product.data.photo}
+        alt={product.data.title}
         width={428}
         height={428}
         priority
       />
-      <h1 className="text-3xl font-semibold mt-1">{product.title}</h1>
+      <h1 className="text-3xl font-semibold mt-1">{product.data.title}</h1>
       <div className="flex flex-row">
         <span>Colors:</span>
-        <ProductColors Colors={product?.colors} />
+        <ProductColors Colors={product.data?.colors} />
       </div>
       <div className="flex flex-row">
         <span>Sizes:</span>
-        <Sizes sizes={product.sizes} />
+        <Sizes sizes={product.data.sizes} />
       </div>
-      <p>{product.overview}</p>
+      <p>{product.data.overview}</p>
       <div className="flex flex-col w-full items-stretch">
         <Button
           addedClass={

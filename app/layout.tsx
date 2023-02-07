@@ -20,7 +20,7 @@ export default function RootLayout({
       <body>
         <Script src="/assets/scripts/flowbite.min.js" />
         <HeaderPrimary />
-        <HeaderSecondary />
+        {/* <HeaderSecondary /> */}
         <div className="m-6">{children}</div>
         <Footer />
         <Pwa /> {/* Register Service Worker */}

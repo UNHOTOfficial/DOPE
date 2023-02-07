@@ -2,8 +2,16 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 type Products = {
   data: Array<{
-    image: string;
+    id: number;
+    photo: string;
     title: string;
+    price: number;
+    rate: number;
+    count: number;
+    isFresh: boolean;
+    isBestSelling: boolean;
+    colors: Array<string>;
+    overview: string;
   }>;
   message: string;
 };
@@ -15,24 +23,7 @@ export default function handler(
   switch (req.method) {
     case "GET":
       res.status(200).json({
-        data: [
-          {
-            image: "/assets/Loafers.jpg",
-            title: "Men Formal Shoes",
-          },
-          {
-            image: "/assets/high-heels.jpg",
-            title: "High Heels",
-          },
-          {
-            image: "/assets/sneakers.jpg",
-            title: "Sneakers",
-          },
-          {
-            image: "/assets/accessories.jpg",
-            title: "accessories",
-          },
-        ],
+        data: [],
         message: "GET",
       });
       break;

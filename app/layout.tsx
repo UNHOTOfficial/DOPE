@@ -3,6 +3,7 @@ import HeaderPrimary from "@/components/HeaderPrimary";
 import HeaderSecondary from "@/components/HeaderSecondary";
 import Script from "next/script";
 import "./globals.css";
+import Providers from "./providers";
 import Pwa from "./pwa";
 
 export default function RootLayout({
@@ -21,7 +22,9 @@ export default function RootLayout({
         <Script src="/assets/scripts/flowbite.min.js" />
         <HeaderPrimary />
         <HeaderSecondary />
-        <div className="m-6">{children}</div>
+        <div className="m-6">
+          <Providers>{children}</Providers>
+        </div>
         <Footer />
         <Pwa /> {/* Register Service Worker */}
       </body>

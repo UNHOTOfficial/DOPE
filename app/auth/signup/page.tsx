@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Logo from "../../public/Logo.svg";
+import Logo from "../../../public/Logo.svg";
 
 export default function page() {
   // Handles the submit event on form submit.
@@ -40,7 +40,7 @@ export default function page() {
     // Get the response data from server as JSON.
     // If server returns the name submitted, that means the form works.
     const result = await response.json();
-    alert(`Is this your Sign up data: ${result.data}`);
+    alert("Signed Up!");
   };
   return (
     <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -144,7 +144,7 @@ export default function page() {
             <p className="text-sm font-light text-gray-500 dark:text-gray-400">
               Already have an account?{" "}
               <Link
-                href={"/signin"}
+                href={"/auth/signin"}
                 className="font-medium text-primary-600 hover:underline dark:text-primary-500"
               >
                 Login

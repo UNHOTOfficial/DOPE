@@ -21,10 +21,8 @@ export default function Page() {
     event.preventDefault();
 
     const res = await signIn("credentials", {
-      redirect: false,
       email: data.email,
       password: data.password,
-      callbackUrl: `${window.location.origin}/account`,
     });
 
     console.log(res);

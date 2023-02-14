@@ -12,7 +12,7 @@ export default function HeaderSecondary() {
   return (
     <div className="flex flex-row items-center justify-around py-2 bg-slate-900 border-y border-gray-700">
       <div className="flex flex-row w-28 justify-evenly">
-        <Link href={"signin"} aria-label="Sign In To Your Account">
+        <Link href={"auth/signin"} aria-label="Sign In To Your Account">
           <i className="bi bi-person" style={{ fontSize: "1.5rem" }}></i>
         </Link>
         <Link href={"cart"} aria-label="View Your Shopping Cart.">

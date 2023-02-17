@@ -3,51 +3,74 @@ import Button from "@/components/Button";
 import fetcher from "@/services/fetch";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import Logo from "../../../public/Logo.svg";
-import { signIn, useSession } from "next-auth/react";
+import {
+  signIn,
+  useSession,
+  getProviders,
+  LiteralUnion,
+  ClientSafeProvider,
+} from "next-auth/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import Github from "next-auth/providers/github";
+import { BuiltInProviderType } from "next-auth/providers";
 
 export default function Page() {
   const { data: session } = useSession();
-  // Handles the submit event on form submit.
-  const handleSubmit = async (event: any) => {
-    const data = {
-      email: event.target.email.value,
-      password: event.target.password.value,
-    };
-    // Stop the form from submitting and refreshing the page.
-    event.preventDefault();
+  console.log({ data: session });
 
-    const res = await signIn("credentials", {
-      email: data.email,
-      password: data.password,
-    });
+  const [providers, setProviders] = useState<Record<
+    LiteralUnion<BuiltInProviderType, string>,
+    ClientSafeProvider
+  > | null>(null);
 
-    console.log(res);
-    // Get data from the form.
-    // // API endpoint where we send form data.
-    // const endpoint = "/api/users";
+  useEffect(() => {
+    async function fetchProviders() {
+      const providers = await getProviders();
+      setProviders(providers);
+    }
+    fetchProviders();
+  }, []);
 
-    // // Send the form data to our forms API on Vercel and get a response.
-    // const response = await fetcher(endpoint, "static");
+  // // Handles the submit event on form submit.
+  // const handleSubmit = async (event: any) => {
+  //   const data = {
+  //     email: event.target.email.value,
+  //     password: event.target.password.value,
+  //   };
+  //   // Stop the form from submitting and refreshing the page.
+  //   event.preventDefault();
 
-    // // Get the response data from server as JSON.
-    // // If server returns the name submitted, that means the form works.
+  //   const res = await signIn("credentials", {
+  //     email: data.email,
+  //     password: data.password,
+  //   });
 
-    // if (response.data.some((e: any) => e.email === data.email)) {
-    //   alert("Logged In!");
-    // } else {
-    //   alert("Wrong!");
-    // }
-  };
+  //   console.log(res);
+  //   // Get data from the form.
+  //   // // API endpoint where we send form data.
+  //   // const endpoint = "/api/users";
+
+  //   // // Send the form data to our forms API on Vercel and get a response.
+  //   // const response = await fetcher(endpoint, "static");
+
+  //   // // Get the response data from server as JSON.
+  //   // // If server returns the name submitted, that means the form works.
+
+  //   // if (response.data.some((e: any) => e.email === data.email)) {
+  //   //   alert("Logged In!");
+  //   // } else {
+  //   //   alert("Wrong!");
+  //   // }
+  // };
   return (
     <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-      <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+      <div className="flex flex-col items-center w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
         <Link
           href={"/"}
-          className="flex justify-center mt-3 text-2xl font-semibold text-gray-900 dark:text-white"
+          className="mt-3 text-2xl font-semibold text-gray-900 dark:text-white"
         >
           <Image
             className="my-4"
@@ -61,9 +84,30 @@ export default function Page() {
           <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
             Sign in to your account
           </h1>
+          {providers &&
+            Object.values(providers).map((provider) => (
+              <button
+                onClick={() => signIn(provider.id)}
+                className="mx-auto ring-1 ring-white py-3 px-7 rounded"
+                key={provider.id}
+              >
+                <i className="bi bi-github mr-2"></i> Sign in with{" "}
+                {provider.name}
+              </button>
+            ))}
+        </div>
+
+        <div className="inline-flex items-center justify-center w-full">
+          <hr className="w-64 h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+          <span className="absolute px-3 font-medium text-gray-800 -translate-x-1/2 bg-white left-1/2 dark:text-white dark:bg-gray-800">
+            or sign in with credentials
+          </span>
+        </div>
+
+        <div className="w-full px-6 pt-2 pb-6 space-y-4 md:space-y-6 sm:px-8">
           <form
             className="space-y-4 md:space-y-6"
-            onSubmit={() => handleSubmit}
+            // onSubmit={() => handleSubmit}
           >
             <div>
               <label
@@ -97,39 +141,41 @@ export default function Page() {
                 required
               />
             </div>
-            <div className="flex items-center justify-between">
-              <div className="flex items-start">
-                <div className="flex items-center h-5">
-                  <input
-                    id="remember"
-                    aria-describedby="remember"
-                    type="checkbox"
-                    className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                    required
-                  />
+            <div className="flex flex-col justify-between">
+              <div className="flex justify-between mb-4">
+                <div className="flex items-start">
+                  <div className="flex items-center h-5">
+                    <input
+                      id="remember"
+                      aria-describedby="remember"
+                      type="checkbox"
+                      className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                      required
+                    />
+                  </div>
+                  <div className="ml-3 text-sm">
+                    <label
+                      htmlFor="remember"
+                      className="text-gray-500 dark:text-gray-300"
+                    >
+                      Remember me
+                    </label>
+                  </div>
                 </div>
-                <div className="ml-3 text-sm">
-                  <label
-                    htmlFor="remember"
-                    className="text-gray-500 dark:text-gray-300"
-                  >
-                    Remember me
-                  </label>
-                </div>
+                <Link
+                  href={"forget"}
+                  className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
+                >
+                  Forgot password?
+                </Link>
               </div>
-              <Link
-                href={"forget"}
-                className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
+              <button
+                type="submit"
+                className="mx-auto ring-1 ring-white py-2.5 px-6 rounded"
               >
-                Forgot password?
-              </Link>
+                Sign in
+              </button>
             </div>
-            <button
-              type="submit"
-              className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-            >
-              Sign in
-            </button>
             <p className="text-sm font-light text-gray-500 dark:text-gray-400">
               Don’t have an account yet?{" "}
               <Link

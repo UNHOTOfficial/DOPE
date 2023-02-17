@@ -12,15 +12,15 @@ import {
   LiteralUnion,
   ClientSafeProvider,
 } from "next-auth/react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Github from "next-auth/providers/github";
 import { BuiltInProviderType } from "next-auth/providers";
+import { Session } from "next-auth";
 
 export default function Page() {
-  const { data: session } = useSession();
-  console.log({ data: session });
-
+  const { data: session, status } = useSession();
+  const router = useRouter();
   const [providers, setProviders] = useState<Record<
     LiteralUnion<BuiltInProviderType, string>,
     ClientSafeProvider
@@ -65,6 +65,18 @@ export default function Page() {
   //   //   alert("Wrong!");
   //   // }
   // };
+  type SessionData = {
+    data: Session | null;
+    status: "loading" | "authenticated" | "unauthenticated";
+  };
+
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
+
+  if (status === "authenticated") {
+    router.push("/account");
+  }
   return (
     <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
       <div className="flex flex-col items-center w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">

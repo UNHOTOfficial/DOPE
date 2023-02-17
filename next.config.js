@@ -30,7 +30,11 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["i.imgur.com", "images.unsplash.com"],
+    domains: [
+      "i.imgur.com",
+      "images.unsplash.com",
+      "avatars.githubusercontent.com",
+    ],
   },
 };
 

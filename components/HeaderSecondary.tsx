@@ -1,23 +1,43 @@
+"use client";
 import fetcher from "@/services/fetch";
 import { log } from "console";
+import { Session } from "next-auth";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 import CartIcon from "./CartIcon";
+import UserIcon from "./UserIcon";
 
 export default function HeaderSecondary() {
-  const status = {
-    data: [1, 2, 3],
+  type SessionData = {
+    data: Session | null;
+    status: "loading" | "authenticated" | "unauthenticated";
   };
+
+  const { data: session, status } = useSession();
 
   return (
     <div className="flex flex-row items-center justify-around py-2 bg-slate-900 border-y border-gray-700">
-      <div className="flex flex-row w-28 justify-evenly">
-        <Link href={"auth/signin"} aria-label="Sign In To Your Account">
-          <i className="bi bi-person" style={{ fontSize: "1.5rem" }}></i>
-        </Link>
-        <Link href={"cart"} aria-label="View Your Shopping Cart.">
-          <CartIcon status={status} />
-        </Link>
+      <div className="flex flex-row w-28 justify-evenly items-center">
+        {status === "unauthenticated" ? (
+          <React.Fragment>
+            <Link href={"auth/signin"} aria-label="Sign In To Your Account">
+              <UserIcon />
+            </Link>
+            <Link href={"cart"} aria-label="View Your Shopping Cart.">
+              <CartIcon status={{ data: [1, 2, 3] }} />
+            </Link>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <Link href={"account"} aria-label="Sign In To Your Account">
+              <UserIcon />
+            </Link>
+            <Link href={"cart"} aria-label="View Your Shopping Cart.">
+              <CartIcon status={{ data: [1, 2, 3] }} />
+            </Link>
+          </React.Fragment>
+        )}
       </div>
       <form>
         <input

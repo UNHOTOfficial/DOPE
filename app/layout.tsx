@@ -21,7 +21,9 @@ export default function RootLayout({
       <body>
         <Script src="/assets/scripts/flowbite.min.js" />
         <HeaderPrimary />
-        <HeaderSecondary />
+        <Providers>
+          <HeaderSecondary />
+        </Providers>
         <div className="m-6">
           <Providers>{children}</Providers>
         </div>

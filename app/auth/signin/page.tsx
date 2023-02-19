@@ -22,10 +22,10 @@ export default function Page() {
   const { data: session, status } = useSession();
   const router = useRouter();
   const [providers, setProviders] = useState<Record<
-    LiteralUnion<BuiltInProviderType, string>,
-    ClientSafeProvider
+  LiteralUnion<BuiltInProviderType, string>,
+  ClientSafeProvider
   > | null>(null);
-
+  
   useEffect(() => {
     async function fetchProviders() {
       const providers = await getProviders();
@@ -71,7 +71,7 @@ export default function Page() {
   };
 
   if (status === "loading") {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   }
 
   if (status === "authenticated") {
